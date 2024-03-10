@@ -42,6 +42,7 @@ export const getTokens = async (account: any, chainId: any) => {
     );
   } catch (e) {
     console.log(e);
+    return { data: [] };
   }
 };
 

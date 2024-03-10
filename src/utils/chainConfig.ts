@@ -141,4 +141,38 @@ export const chainIdToInfo = {
     },
     lzEntryPoint: "0x9740FF91F1985D8d2B71494aE1A2f723bb3Ed9E4",
   },
+
+  "0x13881": {
+    lzChainId: 10109,
+    rpcURL: "https://polygon-rpc.com",
+    blockExplorer: "https://polygonscan.com",
+    chainName: "Polygon",
+    configs: {
+      chainId: "0x13881",
+      chainName: "Polygon Mainnet",
+      nativeCurrency: {
+        name: "MATIC",
+        symbol: "MATIC",
+        decimals: 18,
+      },
+      rpcUrls: ["https://polygon-rpc.com/"],
+      blockExplorerUrls: ["https://polygonscan.com/"],
+    },
+    lzEntryPoint: "0xf69186dfBa60DdB133E91E9A4B5673624293d8F8",
+  },
+  "0x507": {
+    lzChainId: 10126,
+    configs: {
+      chainId: "0x507",
+      chainName: "Moonbeam",
+      nativeCurrency: {
+        name: "GLMR",
+        symbol: "GLMR",
+        decimals: 18,
+      },
+      rpcUrls: ["https://rpc.api.moonbeam.network"],
+      blockExplorerUrls: ["https://moonbeam.moonscan.io"],
+    },
+    lzEntryPoint: "0xb23b28012ee92E8dE39DEb57Af31722223034747",
+  },
 } as any;

@@ -15,7 +15,7 @@ import { ethers } from "ethers";
 import ABI from "../../utils/abi.json";
 
 const contractABI = ABI;
-const contractAddress = "0x83676C53fd66131E7560040F25839E43Ac810439";
+const contractAddress = "0x2b0cC84C99FA74AC4E0d6A71B5053E0e31413571";
 
 const Wrapper = styled.div`
   position: relative;
@@ -99,7 +99,7 @@ export const Mint = () => {
       }
     };
 
-    fetchTotalSupply();
+    // fetchTotalSupply();
   }, []);
 
   const isActiveChain = (chainId: string) => {
@@ -137,10 +137,10 @@ export const Mint = () => {
 
       const network = await provider.getNetwork();
 
-      if (network.chainId !== 137) {
+      if (network.chainId !== 80001) {
         const result = await window.ethereum.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x89" }], // Polygon mainnet chain ID
+          params: [{ chainId: "0x13881" }], // Polygon mainnet chain ID
         });
 
         if (result && result.error) {
@@ -218,11 +218,21 @@ export const Mint = () => {
                 </HeaderTitle>
 
                 <HeaderText className="my-8 !text-lg">
-                    Cross-chain fungible token swaps are easy, but traversing your non-fungible tokens has been a lot more complicated. And frustrating. After all, who in their right mind wants to interact with the block explorer just to make a cross-chain transaction?
-                        <br/><br/>
-                    With your Airdrop Hunter and TraverseMyONFT, you can travel the cross-chain NFT universe as often as you want, and you’ll never have to worry about the block explorer again.
-                    <br/><br/>
-                    So if you want to build LayerZero protocol transaction history in the easiest way possible, simply mint your Airdrop Hunter and start traversing!
+                  Cross-chain fungible token swaps are easy, but traversing your
+                  non-fungible tokens has been a lot more complicated. And
+                  frustrating. After all, who in their right mind wants to
+                  interact with the block explorer just to make a cross-chain
+                  transaction?
+                  <br />
+                  <br />
+                  With your Airdrop Hunter and TraverseMyONFT, you can travel
+                  the cross-chain NFT universe as often as you want, and you’ll
+                  never have to worry about the block explorer again.
+                  <br />
+                  <br />
+                  So if you want to build LayerZero protocol transaction history
+                  in the easiest way possible, simply mint your Airdrop Hunter
+                  and start traversing!
                 </HeaderText>
               </div>
 
@@ -267,11 +277,60 @@ export const Mint = () => {
                 <h3 className="text-white py-3">0 / 100,000</h3>
 
                 <div className="text-center">
-                  <h3 className="text-white text-2xl">Mint fee is $5 USD equivalent in Polygon MATIC, plus gas.</h3>
-                  <h4 className="text-white text-lg">Don't have Polygon MATIC? No Problem!</h4>
-                  <h3 className="text-white text-lg">You can use swaps to get the native tokens you need. Some options include <a className="text-[#FC2947]" href="https://stargate.finance/" target='_blank'>Stargate finance</a>, <a className="text-[#FC2947]" href="https://simpleswap.io/" target='_blank'>Simple Swap</a>, <a className="text-[#FC2947]" href="https://www.synapseprotocol.com/" target='_blank'>Synapse Protocol</a>, <a className="text-[#FC2947]" href="https://omoswap.xyz/" target='_blank'>OmoSwap</a>, <a className="text-[#FC2947]" href="https://cbridge.celer.network/" target='_blank'>cBridge.</a></h3>
-                  <p className="text-white text-xs">*TraverseMyONFT has no affiliation with any of the linked swap sites, nor do we receive referral fees</p>
-              </div>
+                  <h3 className="text-white text-2xl">
+                    Mint fee is $5 USD equivalent in Polygon MATIC, plus gas.
+                  </h3>
+                  <h4 className="text-white text-lg">
+                    Don't have Polygon MATIC? No Problem!
+                  </h4>
+                  <h3 className="text-white text-lg">
+                    You can use swaps to get the native tokens you need. Some
+                    options include{" "}
+                    <a
+                      className="text-[#FC2947]"
+                      href="https://stargate.finance/"
+                      target="_blank"
+                    >
+                      Stargate finance
+                    </a>
+                    ,{" "}
+                    <a
+                      className="text-[#FC2947]"
+                      href="https://simpleswap.io/"
+                      target="_blank"
+                    >
+                      Simple Swap
+                    </a>
+                    ,{" "}
+                    <a
+                      className="text-[#FC2947]"
+                      href="https://www.synapseprotocol.com/"
+                      target="_blank"
+                    >
+                      Synapse Protocol
+                    </a>
+                    ,{" "}
+                    <a
+                      className="text-[#FC2947]"
+                      href="https://omoswap.xyz/"
+                      target="_blank"
+                    >
+                      OmoSwap
+                    </a>
+                    ,{" "}
+                    <a
+                      className="text-[#FC2947]"
+                      href="https://cbridge.celer.network/"
+                      target="_blank"
+                    >
+                      cBridge.
+                    </a>
+                  </h3>
+                  <p className="text-white text-xs">
+                    *TraverseMyONFT has no affiliation with any of the linked
+                    swap sites, nor do we receive referral fees
+                  </p>
+                </div>
               </div>
             </div>
             <Space />
